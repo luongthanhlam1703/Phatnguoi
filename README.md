@@ -56,6 +56,12 @@ schedule.every().day.at("12:00").do(run_robot_test)
 - captcha.py: dùng để xử lý captcha
 
 - world.py: dùng để xử lý in dữ liệu ra world
+## Tính năng của chương trình
+- Tự động mở trình duyệt web chrome và truy cập link kiểm tra phạt nguội
+- Nhập biển số và mã captcha vào ô input và select loại xe
+- Nếu như mã captcha sai sẽ tự động reload trang và nhập lại mã captcha
+- Nhập mã captcha đến khi nào đúng và web hiển thị kết quả sẽ tiến hành lưu nội dung tra cứu được ra wolrd và lưu vào thư mục ketquatracuu/
+- Kết thúc chương trình
 ## Test nhanh (không theo lịch đã set sẵn)
 
 ```bash
