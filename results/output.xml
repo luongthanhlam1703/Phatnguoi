@@ -1,0 +1,1281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.6 on win32)" generated="2025-05-09T13:15:20.246718" rpa="false" schemaversion="5">
+<suite id="s1" name="Kt Phatnguoi-main" source="C:\Users\ACER NITRO 5\Downloads\Kt_Phatnguoi-main">
+<suite id="s1-s1" name="Tracuu" source="C:\Users\ACER NITRO 5\Downloads\Kt_Phatnguoi-main\tracuu.robot">
+<test id="s1-s1-t1" name="Chuong trinh dang chay" line="16">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:15:25.973141" level="INFO">Opening browser 'Chrome' to base url 'https://www.csgt.vn/tra-cuu-phuong-tien-vi-pham.html'.</msg>
+<arg>${url}</arg>
+<arg>${trinhduyet}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-09T13:15:25.973141" elapsed="6.295240"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-09T13:15:32.268381" elapsed="0.024369"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-09T13:15:32.292750" level="INFO">${thongbaoloi} = True</msg>
+<var>${thongbaoloi}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-09T13:15:32.292750" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-09T13:15:32.292750" level="INFO">${solanlap} = 1</msg>
+<var>${solanlap}</var>
+<arg>1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-09T13:15:32.292750" elapsed="0.000000"/>
+</kw>
+<while condition="'${thongbaoloi}' == 'True' and ${solanlap} &lt;= 999">
+<iter>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//input[@name="BienKiemSoat"]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-09T13:15:32.300751" elapsed="0.032872"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:15:32.333623" level="INFO">Typing text '98A-370.17' into text field '//input[@name="BienKiemSoat"]'.</msg>
+<arg>//input[@name="BienKiemSoat"]</arg>
+<arg>${bienso}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-09T13:15:32.333623" elapsed="0.163662"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:15:32.499381" level="INFO">Selecting options from selection list '//select[@name="LoaiXe"]' by label Ô tô.</msg>
+<arg>//select[@name="LoaiXe"]</arg>
+<arg>${loaixe}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2025-05-09T13:15:32.497285" elapsed="0.085288"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@id="imgCaptcha"]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-09T13:15:32.582573" elapsed="0.021668"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:15:32.612245" level="INFO">${captcha} = &lt;selenium.webdriver.remote.webelement.WebElement (session="3e6baeab8f7c705b8a27d21f16797e28", element="f.0628411EAF7B7FFC147F2A755892862F.d.B358E11EE3B717E41945CFA4FA92E2BD.e.69")&gt;</msg>
+<var>${captcha}</var>
+<arg>//*[@id="imgCaptcha"]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2025-05-09T13:15:32.604241" elapsed="0.008004"/>
+</kw>
+<kw name="Capture Element Screenshot" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:15:32.673624" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="captcha.png"&gt;&lt;img src="captcha.png" width="400px"&gt;&lt;/a&gt;</msg>
+<arg>${captcha}</arg>
+<arg>captcha.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<status status="PASS" start="2025-05-09T13:15:32.612245" elapsed="0.061379"/>
+</kw>
+<kw name="Doc Captcha" owner="captcha">
+<msg time="2025-05-09T13:15:32.807965" level="INFO">C:\Users\ACER NITRO 5\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\utils\data\dataloader.py:665: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  warnings.warn(warn_msg)</msg>
+<msg time="2025-05-09T13:15:32.807965" level="INFO">${noidungcaptcha} = qcfcbx</msg>
+<var>${noidungcaptcha}</var>
+<arg>captcha.png</arg>
+<status status="PASS" start="2025-05-09T13:15:32.673624" elapsed="0.134341"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-09T13:15:32.807965" level="INFO">CAPTCHA: qcfcbx</msg>
+<arg>CAPTCHA: ${noidungcaptcha}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-09T13:15:32.807965" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:15:32.807965" level="INFO">Typing text 'qcfcbx' into text field '//input[@name="txt_captcha"]'.</msg>
+<arg>//input[@name="txt_captcha"]</arg>
+<arg>${noidungcaptcha}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-09T13:15:32.807965" elapsed="0.090545"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:15:32.898510" level="INFO">Clicking element 'xpath://input[@class='btnTraCuu']'.</msg>
+<arg>xpath://input[@class='btnTraCuu']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-09T13:15:32.898510" elapsed="0.050379"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-09T13:15:37.954683" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-09T13:15:32.948889" elapsed="5.005794"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:15:37.983565" level="INFO">Current page contains element 'xpath=//div[@class='xe_texterror' and contains(text(), 'Mã xác nhận sai!')]'.</msg>
+<arg>xpath=//div[@class='xe_texterror' and contains(text(), 'Mã xác nhận sai!')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-05-09T13:15:37.954683" elapsed="0.028882"/>
+</kw>
+<msg time="2025-05-09T13:15:37.983565" level="INFO">${thongbaoloi} = True</msg>
+<var>${thongbaoloi}</var>
+<arg>Page Should Contain Element</arg>
+<arg>xpath=//div[@class='xe_texterror' and contains(text(), 'Mã xác nhận sai!')]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-05-09T13:15:37.954683" elapsed="0.032417"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-09T13:15:37.987100" level="INFO">CAPTCHA sai, thử lại lần 1</msg>
+<arg>CAPTCHA sai, thử lại lần ${solanlap}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-09T13:15:37.987100" elapsed="0.000000"/>
+</kw>
+<arg>'${thongbaoloi}' == 'True'</arg>
+<arg>Log</arg>
+<arg>CAPTCHA sai, thử lại lần ${solanlap}</arg>
+<arg>console=True</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-09T13:15:37.987100" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Reload Page" owner="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" start="2025-05-09T13:15:37.993740" elapsed="0.638010"/>
+</kw>
+<arg>'${thongbaoloi}' == 'True'</arg>
+<arg>Reload Page</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-09T13:15:37.993740" elapsed="0.638010"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-09T13:15:40.636221" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-09T13:15:38.635764" elapsed="2.000843"/>
+</kw>
+<arg>'${thongbaoloi}' == 'True'</arg>
+<arg>Sleep</arg>
+<arg>2s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-09T13:15:38.631750" elapsed="2.004857"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-09T13:15:40.636607" level="INFO">${solanlap} = 2</msg>
+<var>${solanlap}</var>
+<arg>${solanlap} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-09T13:15:40.636607" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-05-09T13:15:32.300751" elapsed="8.335856"/>
+</iter>
+<iter>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//input[@name="BienKiemSoat"]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-09T13:15:40.636607" elapsed="0.041717"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:15:40.678324" level="INFO">Typing text '98A-370.17' into text field '//input[@name="BienKiemSoat"]'.</msg>
+<arg>//input[@name="BienKiemSoat"]</arg>
+<arg>${bienso}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-09T13:15:40.678324" elapsed="0.195450"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:15:40.875291" level="INFO">Selecting options from selection list '//select[@name="LoaiXe"]' by label Ô tô.</msg>
+<arg>//select[@name="LoaiXe"]</arg>
+<arg>${loaixe}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2025-05-09T13:15:40.875291" elapsed="0.072875"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@id="imgCaptcha"]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-09T13:15:40.951310" elapsed="0.030522"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:15:40.998775" level="INFO">${captcha} = &lt;selenium.webdriver.remote.webelement.WebElement (session="3e6baeab8f7c705b8a27d21f16797e28", element="f.0628411EAF7B7FFC147F2A755892862F.d.EFC1CC9B139CC44130EAFB745672D4FD.e.141")&gt;</msg>
+<var>${captcha}</var>
+<arg>//*[@id="imgCaptcha"]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2025-05-09T13:15:40.981832" elapsed="0.016943"/>
+</kw>
+<kw name="Capture Element Screenshot" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:15:41.071549" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="captcha.png"&gt;&lt;img src="captcha.png" width="400px"&gt;&lt;/a&gt;</msg>
+<arg>${captcha}</arg>
+<arg>captcha.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<status status="PASS" start="2025-05-09T13:15:40.998775" elapsed="0.072774"/>
+</kw>
+<kw name="Doc Captcha" owner="captcha">
+<msg time="2025-05-09T13:15:41.321866" level="INFO">C:\Users\ACER NITRO 5\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\utils\data\dataloader.py:665: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  warnings.warn(warn_msg)</msg>
+<msg time="2025-05-09T13:15:41.330229" level="INFO">${noidungcaptcha} = qcfcbx</msg>
+<var>${noidungcaptcha}</var>
+<arg>captcha.png</arg>
+<status status="PASS" start="2025-05-09T13:15:41.071549" elapsed="0.258680"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-09T13:15:41.330229" level="INFO">CAPTCHA: qcfcbx</msg>
+<arg>CAPTCHA: ${noidungcaptcha}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-09T13:15:41.330229" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:15:41.330229" level="INFO">Typing text 'qcfcbx' into text field '//input[@name="txt_captcha"]'.</msg>
+<arg>//input[@name="txt_captcha"]</arg>
+<arg>${noidungcaptcha}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-09T13:15:41.330229" elapsed="0.166365"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:15:41.499096" level="INFO">Clicking element 'xpath://input[@class='btnTraCuu']'.</msg>
+<arg>xpath://input[@class='btnTraCuu']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-09T13:15:41.496594" elapsed="0.082006"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-09T13:15:46.579363" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-09T13:15:41.578600" elapsed="5.000763"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:15:46.604224" level="INFO">Current page contains element 'xpath=//div[@class='xe_texterror' and contains(text(), 'Mã xác nhận sai!')]'.</msg>
+<arg>xpath=//div[@class='xe_texterror' and contains(text(), 'Mã xác nhận sai!')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-05-09T13:15:46.579363" elapsed="0.025912"/>
+</kw>
+<msg time="2025-05-09T13:15:46.605275" level="INFO">${thongbaoloi} = True</msg>
+<var>${thongbaoloi}</var>
+<arg>Page Should Contain Element</arg>
+<arg>xpath=//div[@class='xe_texterror' and contains(text(), 'Mã xác nhận sai!')]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-05-09T13:15:46.579363" elapsed="0.025912"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-09T13:15:46.605275" level="INFO">CAPTCHA sai, thử lại lần 2</msg>
+<arg>CAPTCHA sai, thử lại lần ${solanlap}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-09T13:15:46.605275" elapsed="0.006061"/>
+</kw>
+<arg>'${thongbaoloi}' == 'True'</arg>
+<arg>Log</arg>
+<arg>CAPTCHA sai, thử lại lần ${solanlap}</arg>
+<arg>console=True</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-09T13:15:46.605275" elapsed="0.006651"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Reload Page" owner="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" start="2025-05-09T13:15:46.612480" elapsed="0.466010"/>
+</kw>
+<arg>'${thongbaoloi}' == 'True'</arg>
+<arg>Reload Page</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-09T13:15:46.612480" elapsed="0.466792"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-09T13:15:49.079616" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-09T13:15:47.079272" elapsed="2.000344"/>
+</kw>
+<arg>'${thongbaoloi}' == 'True'</arg>
+<arg>Sleep</arg>
+<arg>2s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-09T13:15:47.079272" elapsed="2.000344"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-09T13:15:49.083646" level="INFO">${solanlap} = 3</msg>
+<var>${solanlap}</var>
+<arg>${solanlap} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-09T13:15:49.079616" elapsed="0.004030"/>
+</kw>
+<status status="PASS" start="2025-05-09T13:15:40.636607" elapsed="8.448625"/>
+</iter>
+<iter>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//input[@name="BienKiemSoat"]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-09T13:15:49.085232" elapsed="0.042247"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:15:49.127479" level="INFO">Typing text '98A-370.17' into text field '//input[@name="BienKiemSoat"]'.</msg>
+<arg>//input[@name="BienKiemSoat"]</arg>
+<arg>${bienso}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-09T13:15:49.127479" elapsed="0.241391"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:15:49.368870" level="INFO">Selecting options from selection list '//select[@name="LoaiXe"]' by label Ô tô.</msg>
+<arg>//select[@name="LoaiXe"]</arg>
+<arg>${loaixe}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2025-05-09T13:15:49.368870" elapsed="0.089610"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@id="imgCaptcha"]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-09T13:15:49.458480" elapsed="0.041937"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:15:49.515942" level="INFO">${captcha} = &lt;selenium.webdriver.remote.webelement.WebElement (session="3e6baeab8f7c705b8a27d21f16797e28", element="f.0628411EAF7B7FFC147F2A755892862F.d.7BEEB259C7436B30C8FC527422E9FE7A.e.231")&gt;</msg>
+<var>${captcha}</var>
+<arg>//*[@id="imgCaptcha"]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2025-05-09T13:15:49.500417" elapsed="0.015525"/>
+</kw>
+<kw name="Capture Element Screenshot" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:15:49.619001" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="captcha.png"&gt;&lt;img src="captcha.png" width="400px"&gt;&lt;/a&gt;</msg>
+<arg>${captcha}</arg>
+<arg>captcha.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<status status="PASS" start="2025-05-09T13:15:49.515942" elapsed="0.104147"/>
+</kw>
+<kw name="Doc Captcha" owner="captcha">
+<msg time="2025-05-09T13:15:49.893585" level="INFO">C:\Users\ACER NITRO 5\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\utils\data\dataloader.py:665: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  warnings.warn(warn_msg)</msg>
+<msg time="2025-05-09T13:15:49.895762" level="INFO">${noidungcaptcha} = qcfcbx</msg>
+<var>${noidungcaptcha}</var>
+<arg>captcha.png</arg>
+<status status="PASS" start="2025-05-09T13:15:49.620089" elapsed="0.275673"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-09T13:15:49.895762" level="INFO">CAPTCHA: qcfcbx</msg>
+<arg>CAPTCHA: ${noidungcaptcha}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-09T13:15:49.895762" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:15:49.901848" level="INFO">Typing text 'qcfcbx' into text field '//input[@name="txt_captcha"]'.</msg>
+<arg>//input[@name="txt_captcha"]</arg>
+<arg>${noidungcaptcha}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-09T13:15:49.901788" elapsed="0.201227"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:15:50.105258" level="INFO">Clicking element 'xpath://input[@class='btnTraCuu']'.</msg>
+<arg>xpath://input[@class='btnTraCuu']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-09T13:15:50.104160" elapsed="0.165926"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-09T13:15:55.270488" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-09T13:15:50.270086" elapsed="5.001419"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:15:55.289842" level="INFO">Current page contains element 'xpath=//div[@class='xe_texterror' and contains(text(), 'Mã xác nhận sai!')]'.</msg>
+<arg>xpath=//div[@class='xe_texterror' and contains(text(), 'Mã xác nhận sai!')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-05-09T13:15:55.271505" elapsed="0.018337"/>
+</kw>
+<msg time="2025-05-09T13:15:55.289842" level="INFO">${thongbaoloi} = True</msg>
+<var>${thongbaoloi}</var>
+<arg>Page Should Contain Element</arg>
+<arg>xpath=//div[@class='xe_texterror' and contains(text(), 'Mã xác nhận sai!')]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-05-09T13:15:55.271505" elapsed="0.018337"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-09T13:15:55.296554" level="INFO">CAPTCHA sai, thử lại lần 3</msg>
+<arg>CAPTCHA sai, thử lại lần ${solanlap}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-09T13:15:55.296554" elapsed="0.000000"/>
+</kw>
+<arg>'${thongbaoloi}' == 'True'</arg>
+<arg>Log</arg>
+<arg>CAPTCHA sai, thử lại lần ${solanlap}</arg>
+<arg>console=True</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-09T13:15:55.296130" elapsed="0.000424"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Reload Page" owner="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" start="2025-05-09T13:15:55.296554" elapsed="0.684003"/>
+</kw>
+<arg>'${thongbaoloi}' == 'True'</arg>
+<arg>Reload Page</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-09T13:15:55.296554" elapsed="0.684003"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-09T13:15:57.984559" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-09T13:15:55.983759" elapsed="2.001668"/>
+</kw>
+<arg>'${thongbaoloi}' == 'True'</arg>
+<arg>Sleep</arg>
+<arg>2s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-09T13:15:55.980557" elapsed="2.004870"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-09T13:15:57.985427" level="INFO">${solanlap} = 4</msg>
+<var>${solanlap}</var>
+<arg>${solanlap} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-09T13:15:57.985427" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-05-09T13:15:49.085232" elapsed="8.903774"/>
+</iter>
+<iter>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//input[@name="BienKiemSoat"]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-09T13:15:57.989006" elapsed="0.041261"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:15:58.030267" level="INFO">Typing text '98A-370.17' into text field '//input[@name="BienKiemSoat"]'.</msg>
+<arg>//input[@name="BienKiemSoat"]</arg>
+<arg>${bienso}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-09T13:15:58.030267" elapsed="0.224971"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:15:58.255238" level="INFO">Selecting options from selection list '//select[@name="LoaiXe"]' by label Ô tô.</msg>
+<arg>//select[@name="LoaiXe"]</arg>
+<arg>${loaixe}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2025-05-09T13:15:58.255238" elapsed="0.100743"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@id="imgCaptcha"]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-09T13:15:58.355981" elapsed="0.042712"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:15:58.417822" level="INFO">${captcha} = &lt;selenium.webdriver.remote.webelement.WebElement (session="3e6baeab8f7c705b8a27d21f16797e28", element="f.0628411EAF7B7FFC147F2A755892862F.d.AA18762FC8DEB0E9DE6A9F9698B71286.e.304")&gt;</msg>
+<var>${captcha}</var>
+<arg>//*[@id="imgCaptcha"]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2025-05-09T13:15:58.399789" elapsed="0.018033"/>
+</kw>
+<kw name="Capture Element Screenshot" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:15:58.522302" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="captcha.png"&gt;&lt;img src="captcha.png" width="400px"&gt;&lt;/a&gt;</msg>
+<arg>${captcha}</arg>
+<arg>captcha.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<status status="PASS" start="2025-05-09T13:15:58.417822" elapsed="0.104480"/>
+</kw>
+<kw name="Doc Captcha" owner="captcha">
+<msg time="2025-05-09T13:15:58.795674" level="INFO">C:\Users\ACER NITRO 5\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\utils\data\dataloader.py:665: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  warnings.warn(warn_msg)</msg>
+<msg time="2025-05-09T13:15:58.796759" level="INFO">${noidungcaptcha} = qcfcbx</msg>
+<var>${noidungcaptcha}</var>
+<arg>captcha.png</arg>
+<status status="PASS" start="2025-05-09T13:15:58.522302" elapsed="0.274457"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-09T13:15:58.796759" level="INFO">CAPTCHA: qcfcbx</msg>
+<arg>CAPTCHA: ${noidungcaptcha}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-09T13:15:58.796759" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:15:58.796759" level="INFO">Typing text 'qcfcbx' into text field '//input[@name="txt_captcha"]'.</msg>
+<arg>//input[@name="txt_captcha"]</arg>
+<arg>${noidungcaptcha}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-09T13:15:58.796759" elapsed="0.221504"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:15:59.018263" level="INFO">Clicking element 'xpath://input[@class='btnTraCuu']'.</msg>
+<arg>xpath://input[@class='btnTraCuu']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-09T13:15:59.018263" elapsed="0.096308"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-09T13:16:04.114894" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-09T13:15:59.114571" elapsed="5.000323"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:16:04.139610" level="INFO">Current page contains element 'xpath=//div[@class='xe_texterror' and contains(text(), 'Mã xác nhận sai!')]'.</msg>
+<arg>xpath=//div[@class='xe_texterror' and contains(text(), 'Mã xác nhận sai!')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-05-09T13:16:04.117220" elapsed="0.024707"/>
+</kw>
+<msg time="2025-05-09T13:16:04.142318" level="INFO">${thongbaoloi} = True</msg>
+<var>${thongbaoloi}</var>
+<arg>Page Should Contain Element</arg>
+<arg>xpath=//div[@class='xe_texterror' and contains(text(), 'Mã xác nhận sai!')]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-05-09T13:16:04.116814" elapsed="0.025504"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-09T13:16:04.142318" level="INFO">CAPTCHA sai, thử lại lần 4</msg>
+<arg>CAPTCHA sai, thử lại lần ${solanlap}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-09T13:16:04.142318" elapsed="0.000000"/>
+</kw>
+<arg>'${thongbaoloi}' == 'True'</arg>
+<arg>Log</arg>
+<arg>CAPTCHA sai, thử lại lần ${solanlap}</arg>
+<arg>console=True</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-09T13:16:04.142318" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Reload Page" owner="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" start="2025-05-09T13:16:04.150448" elapsed="0.469354"/>
+</kw>
+<arg>'${thongbaoloi}' == 'True'</arg>
+<arg>Reload Page</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-09T13:16:04.142318" elapsed="0.477484"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-09T13:16:06.620007" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-09T13:16:04.619802" elapsed="2.000205"/>
+</kw>
+<arg>'${thongbaoloi}' == 'True'</arg>
+<arg>Sleep</arg>
+<arg>2s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-09T13:16:04.619802" elapsed="2.000205"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-09T13:16:06.620007" level="INFO">${solanlap} = 5</msg>
+<var>${solanlap}</var>
+<arg>${solanlap} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-09T13:16:06.620007" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-05-09T13:15:57.989006" elapsed="8.631001"/>
+</iter>
+<iter>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//input[@name="BienKiemSoat"]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-09T13:16:06.620007" elapsed="0.049551"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:16:06.669558" level="INFO">Typing text '98A-370.17' into text field '//input[@name="BienKiemSoat"]'.</msg>
+<arg>//input[@name="BienKiemSoat"]</arg>
+<arg>${bienso}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-09T13:16:06.669558" elapsed="0.246351"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:16:06.915909" level="INFO">Selecting options from selection list '//select[@name="LoaiXe"]' by label Ô tô.</msg>
+<arg>//select[@name="LoaiXe"]</arg>
+<arg>${loaixe}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2025-05-09T13:16:06.915909" elapsed="0.102681"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@id="imgCaptcha"]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-09T13:16:07.018590" elapsed="0.041461"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:16:07.079927" level="INFO">${captcha} = &lt;selenium.webdriver.remote.webelement.WebElement (session="3e6baeab8f7c705b8a27d21f16797e28", element="f.0628411EAF7B7FFC147F2A755892862F.d.448B50ADF8B996AD01AA9C158143C945.e.394")&gt;</msg>
+<var>${captcha}</var>
+<arg>//*[@id="imgCaptcha"]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2025-05-09T13:16:07.060051" elapsed="0.019876"/>
+</kw>
+<kw name="Capture Element Screenshot" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:16:07.171297" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="captcha.png"&gt;&lt;img src="captcha.png" width="400px"&gt;&lt;/a&gt;</msg>
+<arg>${captcha}</arg>
+<arg>captcha.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<status status="PASS" start="2025-05-09T13:16:07.079927" elapsed="0.091370"/>
+</kw>
+<kw name="Doc Captcha" owner="captcha">
+<msg time="2025-05-09T13:16:07.441306" level="INFO">C:\Users\ACER NITRO 5\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\utils\data\dataloader.py:665: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  warnings.warn(warn_msg)</msg>
+<msg time="2025-05-09T13:16:07.441306" level="INFO">${noidungcaptcha} = qcfcbx</msg>
+<var>${noidungcaptcha}</var>
+<arg>captcha.png</arg>
+<status status="PASS" start="2025-05-09T13:16:07.171297" elapsed="0.270009"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-09T13:16:07.441306" level="INFO">CAPTCHA: qcfcbx</msg>
+<arg>CAPTCHA: ${noidungcaptcha}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-09T13:16:07.441306" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:16:07.441306" level="INFO">Typing text 'qcfcbx' into text field '//input[@name="txt_captcha"]'.</msg>
+<arg>//input[@name="txt_captcha"]</arg>
+<arg>${noidungcaptcha}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-09T13:16:07.441306" elapsed="0.204335"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:16:07.645641" level="INFO">Clicking element 'xpath://input[@class='btnTraCuu']'.</msg>
+<arg>xpath://input[@class='btnTraCuu']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-09T13:16:07.645641" elapsed="0.150167"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-09T13:16:12.796011" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-09T13:16:07.795808" elapsed="5.000203"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:16:12.810882" level="INFO">Current page contains element 'xpath=//div[@class='xe_texterror' and contains(text(), 'Mã xác nhận sai!')]'.</msg>
+<arg>xpath=//div[@class='xe_texterror' and contains(text(), 'Mã xác nhận sai!')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-05-09T13:16:12.798637" elapsed="0.012245"/>
+</kw>
+<msg time="2025-05-09T13:16:12.810882" level="INFO">${thongbaoloi} = True</msg>
+<var>${thongbaoloi}</var>
+<arg>Page Should Contain Element</arg>
+<arg>xpath=//div[@class='xe_texterror' and contains(text(), 'Mã xác nhận sai!')]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-05-09T13:16:12.796011" elapsed="0.014871"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-09T13:16:12.815927" level="INFO">CAPTCHA sai, thử lại lần 5</msg>
+<arg>CAPTCHA sai, thử lại lần ${solanlap}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-09T13:16:12.810882" elapsed="0.005045"/>
+</kw>
+<arg>'${thongbaoloi}' == 'True'</arg>
+<arg>Log</arg>
+<arg>CAPTCHA sai, thử lại lần ${solanlap}</arg>
+<arg>console=True</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-09T13:16:12.810882" elapsed="0.005045"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Reload Page" owner="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" start="2025-05-09T13:16:12.815927" elapsed="0.323251"/>
+</kw>
+<arg>'${thongbaoloi}' == 'True'</arg>
+<arg>Reload Page</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-09T13:16:12.815927" elapsed="0.323251"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-09T13:16:15.139510" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-09T13:16:13.139178" elapsed="2.000332"/>
+</kw>
+<arg>'${thongbaoloi}' == 'True'</arg>
+<arg>Sleep</arg>
+<arg>2s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-09T13:16:13.139178" elapsed="2.000332"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-09T13:16:15.139510" level="INFO">${solanlap} = 6</msg>
+<var>${solanlap}</var>
+<arg>${solanlap} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-09T13:16:15.139510" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-05-09T13:16:06.620007" elapsed="8.519503"/>
+</iter>
+<iter>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//input[@name="BienKiemSoat"]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-09T13:16:15.139510" elapsed="0.045516"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:16:15.185026" level="INFO">Typing text '98A-370.17' into text field '//input[@name="BienKiemSoat"]'.</msg>
+<arg>//input[@name="BienKiemSoat"]</arg>
+<arg>${bienso}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-09T13:16:15.185026" elapsed="0.249959"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:16:15.434985" level="INFO">Selecting options from selection list '//select[@name="LoaiXe"]' by label Ô tô.</msg>
+<arg>//select[@name="LoaiXe"]</arg>
+<arg>${loaixe}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2025-05-09T13:16:15.434985" elapsed="0.107484"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@id="imgCaptcha"]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-09T13:16:15.542469" elapsed="0.041621"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:16:15.601909" level="INFO">${captcha} = &lt;selenium.webdriver.remote.webelement.WebElement (session="3e6baeab8f7c705b8a27d21f16797e28", element="f.0628411EAF7B7FFC147F2A755892862F.d.2120A2E09E75095462F2BFC49FFE13BB.e.448")&gt;</msg>
+<var>${captcha}</var>
+<arg>//*[@id="imgCaptcha"]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2025-05-09T13:16:15.584090" elapsed="0.017819"/>
+</kw>
+<kw name="Capture Element Screenshot" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:16:15.699588" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="captcha.png"&gt;&lt;img src="captcha.png" width="400px"&gt;&lt;/a&gt;</msg>
+<arg>${captcha}</arg>
+<arg>captcha.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<status status="PASS" start="2025-05-09T13:16:15.601909" elapsed="0.097679"/>
+</kw>
+<kw name="Doc Captcha" owner="captcha">
+<msg time="2025-05-09T13:16:15.953801" level="INFO">C:\Users\ACER NITRO 5\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\utils\data\dataloader.py:665: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  warnings.warn(warn_msg)</msg>
+<msg time="2025-05-09T13:16:15.962384" level="INFO">${noidungcaptcha} = qcfcbx</msg>
+<var>${noidungcaptcha}</var>
+<arg>captcha.png</arg>
+<status status="PASS" start="2025-05-09T13:16:15.699588" elapsed="0.262796"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-09T13:16:15.962384" level="INFO">CAPTCHA: qcfcbx</msg>
+<arg>CAPTCHA: ${noidungcaptcha}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-09T13:16:15.962384" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:16:15.962384" level="INFO">Typing text 'qcfcbx' into text field '//input[@name="txt_captcha"]'.</msg>
+<arg>//input[@name="txt_captcha"]</arg>
+<arg>${noidungcaptcha}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-09T13:16:15.962384" elapsed="0.204109"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:16:16.166493" level="INFO">Clicking element 'xpath://input[@class='btnTraCuu']'.</msg>
+<arg>xpath://input[@class='btnTraCuu']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-09T13:16:16.166493" elapsed="0.146257"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-09T13:16:21.313807" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-09T13:16:16.313552" elapsed="5.000255"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:16:21.336338" level="INFO">Current page contains element 'xpath=//div[@class='xe_texterror' and contains(text(), 'Mã xác nhận sai!')]'.</msg>
+<arg>xpath=//div[@class='xe_texterror' and contains(text(), 'Mã xác nhận sai!')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-05-09T13:16:21.313807" elapsed="0.024612"/>
+</kw>
+<msg time="2025-05-09T13:16:21.339027" level="INFO">${thongbaoloi} = True</msg>
+<var>${thongbaoloi}</var>
+<arg>Page Should Contain Element</arg>
+<arg>xpath=//div[@class='xe_texterror' and contains(text(), 'Mã xác nhận sai!')]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-05-09T13:16:21.313807" elapsed="0.025220"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-09T13:16:21.339027" level="INFO">CAPTCHA sai, thử lại lần 6</msg>
+<arg>CAPTCHA sai, thử lại lần ${solanlap}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-09T13:16:21.339027" elapsed="0.000000"/>
+</kw>
+<arg>'${thongbaoloi}' == 'True'</arg>
+<arg>Log</arg>
+<arg>CAPTCHA sai, thử lại lần ${solanlap}</arg>
+<arg>console=True</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-09T13:16:21.339027" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Reload Page" owner="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" start="2025-05-09T13:16:21.346855" elapsed="0.455719"/>
+</kw>
+<arg>'${thongbaoloi}' == 'True'</arg>
+<arg>Reload Page</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-09T13:16:21.339027" elapsed="0.463547"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-09T13:16:23.802980" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-09T13:16:21.802574" elapsed="2.000406"/>
+</kw>
+<arg>'${thongbaoloi}' == 'True'</arg>
+<arg>Sleep</arg>
+<arg>2s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-09T13:16:21.802574" elapsed="2.000406"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-09T13:16:23.804783" level="INFO">${solanlap} = 7</msg>
+<var>${solanlap}</var>
+<arg>${solanlap} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-09T13:16:23.804783" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-05-09T13:16:15.139510" elapsed="8.665273"/>
+</iter>
+<iter>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//input[@name="BienKiemSoat"]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-09T13:16:23.804783" elapsed="0.038825"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:16:23.846235" level="INFO">Typing text '98A-370.17' into text field '//input[@name="BienKiemSoat"]'.</msg>
+<arg>//input[@name="BienKiemSoat"]</arg>
+<arg>${bienso}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-09T13:16:23.845612" elapsed="0.140073"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:16:23.985685" level="INFO">Selecting options from selection list '//select[@name="LoaiXe"]' by label Ô tô.</msg>
+<arg>//select[@name="LoaiXe"]</arg>
+<arg>${loaixe}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2025-05-09T13:16:23.985685" elapsed="0.061021"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@id="imgCaptcha"]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-09T13:16:24.047711" elapsed="0.031306"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:16:24.089698" level="INFO">${captcha} = &lt;selenium.webdriver.remote.webelement.WebElement (session="3e6baeab8f7c705b8a27d21f16797e28", element="f.0628411EAF7B7FFC147F2A755892862F.d.9815FF26BE561F6086F259AB0B4644B2.e.529")&gt;</msg>
+<var>${captcha}</var>
+<arg>//*[@id="imgCaptcha"]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2025-05-09T13:16:24.079017" elapsed="0.010681"/>
+</kw>
+<kw name="Capture Element Screenshot" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:16:24.169782" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="captcha.png"&gt;&lt;img src="captcha.png" width="400px"&gt;&lt;/a&gt;</msg>
+<arg>${captcha}</arg>
+<arg>captcha.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<status status="PASS" start="2025-05-09T13:16:24.097679" elapsed="0.074802"/>
+</kw>
+<kw name="Doc Captcha" owner="captcha">
+<msg time="2025-05-09T13:16:24.377197" level="INFO">C:\Users\ACER NITRO 5\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\utils\data\dataloader.py:665: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  warnings.warn(warn_msg)</msg>
+<msg time="2025-05-09T13:16:24.385209" level="INFO">${noidungcaptcha} = qcfcbx</msg>
+<var>${noidungcaptcha}</var>
+<arg>captcha.png</arg>
+<status status="PASS" start="2025-05-09T13:16:24.173016" elapsed="0.212193"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-09T13:16:24.385209" level="INFO">CAPTCHA: qcfcbx</msg>
+<arg>CAPTCHA: ${noidungcaptcha}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-09T13:16:24.385209" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:16:24.385209" level="INFO">Typing text 'qcfcbx' into text field '//input[@name="txt_captcha"]'.</msg>
+<arg>//input[@name="txt_captcha"]</arg>
+<arg>${noidungcaptcha}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-09T13:16:24.385209" elapsed="0.108490"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:16:24.494646" level="INFO">Clicking element 'xpath://input[@class='btnTraCuu']'.</msg>
+<arg>xpath://input[@class='btnTraCuu']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-09T13:16:24.493699" elapsed="0.077031"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-09T13:16:29.575982" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-09T13:16:24.574450" elapsed="5.001532"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:16:29.641961" level="INFO">Current page contains element 'xpath=//div[@class='xe_texterror' and contains(text(), 'Mã xác nhận sai!')]'.</msg>
+<arg>xpath=//div[@class='xe_texterror' and contains(text(), 'Mã xác nhận sai!')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-05-09T13:16:29.575982" elapsed="0.065979"/>
+</kw>
+<msg time="2025-05-09T13:16:29.641961" level="INFO">${thongbaoloi} = True</msg>
+<var>${thongbaoloi}</var>
+<arg>Page Should Contain Element</arg>
+<arg>xpath=//div[@class='xe_texterror' and contains(text(), 'Mã xác nhận sai!')]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-05-09T13:16:29.575982" elapsed="0.065979"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-09T13:16:29.641961" level="INFO">CAPTCHA sai, thử lại lần 7</msg>
+<arg>CAPTCHA sai, thử lại lần ${solanlap}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-09T13:16:29.641961" elapsed="0.000000"/>
+</kw>
+<arg>'${thongbaoloi}' == 'True'</arg>
+<arg>Log</arg>
+<arg>CAPTCHA sai, thử lại lần ${solanlap}</arg>
+<arg>console=True</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-09T13:16:29.641961" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Reload Page" owner="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" start="2025-05-09T13:16:29.650310" elapsed="0.455163"/>
+</kw>
+<arg>'${thongbaoloi}' == 'True'</arg>
+<arg>Reload Page</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-09T13:16:29.641961" elapsed="0.463829"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-09T13:16:32.106004" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-09T13:16:30.105790" elapsed="2.000214"/>
+</kw>
+<arg>'${thongbaoloi}' == 'True'</arg>
+<arg>Sleep</arg>
+<arg>2s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-09T13:16:30.105790" elapsed="2.000214"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-09T13:16:32.106004" level="INFO">${solanlap} = 8</msg>
+<var>${solanlap}</var>
+<arg>${solanlap} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-09T13:16:32.106004" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-05-09T13:16:23.804783" elapsed="8.301221"/>
+</iter>
+<iter>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//input[@name="BienKiemSoat"]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-09T13:16:32.111364" elapsed="0.033250"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:16:32.144614" level="INFO">Typing text '98A-370.17' into text field '//input[@name="BienKiemSoat"]'.</msg>
+<arg>//input[@name="BienKiemSoat"]</arg>
+<arg>${bienso}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-09T13:16:32.144614" elapsed="0.121540"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:16:32.267923" level="INFO">Selecting options from selection list '//select[@name="LoaiXe"]' by label Ô tô.</msg>
+<arg>//select[@name="LoaiXe"]</arg>
+<arg>${loaixe}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2025-05-09T13:16:32.266154" elapsed="0.072358"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@id="imgCaptcha"]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-09T13:16:32.338512" elapsed="0.031920"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:16:32.385450" level="INFO">${captcha} = &lt;selenium.webdriver.remote.webelement.WebElement (session="3e6baeab8f7c705b8a27d21f16797e28", element="f.0628411EAF7B7FFC147F2A755892862F.d.A95EA408680724F8D38D8D8825217417.e.610")&gt;</msg>
+<var>${captcha}</var>
+<arg>//*[@id="imgCaptcha"]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2025-05-09T13:16:32.370432" elapsed="0.015018"/>
+</kw>
+<kw name="Capture Element Screenshot" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:16:32.467399" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="captcha.png"&gt;&lt;img src="captcha.png" width="400px"&gt;&lt;/a&gt;</msg>
+<arg>${captcha}</arg>
+<arg>captcha.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<status status="PASS" start="2025-05-09T13:16:32.385450" elapsed="0.085243"/>
+</kw>
+<kw name="Doc Captcha" owner="captcha">
+<msg time="2025-05-09T13:16:32.689815" level="INFO">C:\Users\ACER NITRO 5\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\utils\data\dataloader.py:665: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  warnings.warn(warn_msg)</msg>
+<msg time="2025-05-09T13:16:32.689815" level="INFO">${noidungcaptcha} = qcfcbx</msg>
+<var>${noidungcaptcha}</var>
+<arg>captcha.png</arg>
+<status status="PASS" start="2025-05-09T13:16:32.470693" elapsed="0.219122"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-09T13:16:32.697889" level="INFO">CAPTCHA: qcfcbx</msg>
+<arg>CAPTCHA: ${noidungcaptcha}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-09T13:16:32.689815" elapsed="0.008454"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:16:32.700004" level="INFO">Typing text 'qcfcbx' into text field '//input[@name="txt_captcha"]'.</msg>
+<arg>//input[@name="txt_captcha"]</arg>
+<arg>${noidungcaptcha}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-09T13:16:32.699358" elapsed="0.112898"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:16:32.812256" level="INFO">Clicking element 'xpath://input[@class='btnTraCuu']'.</msg>
+<arg>xpath://input[@class='btnTraCuu']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-09T13:16:32.812256" elapsed="0.083488"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-09T13:16:37.896247" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-09T13:16:32.895744" elapsed="5.000503"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:16:37.928555" level="INFO">Current page contains element 'xpath=//div[@class='xe_texterror' and contains(text(), 'Mã xác nhận sai!')]'.</msg>
+<arg>xpath=//div[@class='xe_texterror' and contains(text(), 'Mã xác nhận sai!')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-05-09T13:16:37.896247" elapsed="0.033014"/>
+</kw>
+<msg time="2025-05-09T13:16:37.929261" level="INFO">${thongbaoloi} = True</msg>
+<var>${thongbaoloi}</var>
+<arg>Page Should Contain Element</arg>
+<arg>xpath=//div[@class='xe_texterror' and contains(text(), 'Mã xác nhận sai!')]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-05-09T13:16:37.896247" elapsed="0.033014"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-09T13:16:37.929261" level="INFO">CAPTCHA sai, thử lại lần 8</msg>
+<arg>CAPTCHA sai, thử lại lần ${solanlap}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-09T13:16:37.929261" elapsed="0.000000"/>
+</kw>
+<arg>'${thongbaoloi}' == 'True'</arg>
+<arg>Log</arg>
+<arg>CAPTCHA sai, thử lại lần ${solanlap}</arg>
+<arg>console=True</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-09T13:16:37.929261" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Reload Page" owner="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" start="2025-05-09T13:16:37.929261" elapsed="0.800511"/>
+</kw>
+<arg>'${thongbaoloi}' == 'True'</arg>
+<arg>Reload Page</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-09T13:16:37.929261" elapsed="0.800511"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-09T13:16:40.731267" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-09T13:16:38.730996" elapsed="2.000271"/>
+</kw>
+<arg>'${thongbaoloi}' == 'True'</arg>
+<arg>Sleep</arg>
+<arg>2s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-09T13:16:38.729772" elapsed="2.001495"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-09T13:16:40.731267" level="INFO">${solanlap} = 9</msg>
+<var>${solanlap}</var>
+<arg>${solanlap} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-09T13:16:40.731267" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-05-09T13:16:32.110357" elapsed="8.620910"/>
+</iter>
+<iter>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//input[@name="BienKiemSoat"]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-09T13:16:40.731267" elapsed="0.015985"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:16:40.747252" level="INFO">Typing text '98A-370.17' into text field '//input[@name="BienKiemSoat"]'.</msg>
+<arg>//input[@name="BienKiemSoat"]</arg>
+<arg>${bienso}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-09T13:16:40.747252" elapsed="0.203280"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:16:40.950532" level="INFO">Selecting options from selection list '//select[@name="LoaiXe"]' by label Ô tô.</msg>
+<arg>//select[@name="LoaiXe"]</arg>
+<arg>${loaixe}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2025-05-09T13:16:40.950532" elapsed="0.077245"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@id="imgCaptcha"]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-09T13:16:41.027777" elapsed="0.022265"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:16:41.065719" level="INFO">${captcha} = &lt;selenium.webdriver.remote.webelement.WebElement (session="3e6baeab8f7c705b8a27d21f16797e28", element="f.0628411EAF7B7FFC147F2A755892862F.d.87268278DC3E5EAC2A52B65BE28AAD96.e.691")&gt;</msg>
+<var>${captcha}</var>
+<arg>//*[@id="imgCaptcha"]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2025-05-09T13:16:41.050042" elapsed="0.015677"/>
+</kw>
+<kw name="Capture Element Screenshot" owner="SeleniumLibrary">
+<msg time="2025-05-09T13:16:41.154362" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="captcha.png"&gt;&lt;img src="captcha.png" width="400px"&gt;&lt;/a&gt;</msg>
+<arg>${captcha}</arg>
+<arg>captcha.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<status status="PASS" start="2025-05-09T13:16:41.065719" elapsed="0.090197"/>
+</kw>
+<kw name="Doc Captcha" owner="captcha">
+<msg time="2025-05-09T13:16:41.173144" level="FAIL">FileNotFoundError: No such file: 'C:\Users\ACER NITRO 5\Downloads\Kt_Phatnguoi-main\captcha.png'</msg>
+<var>${noidungcaptcha}</var>
+<arg>captcha.png</arg>
+<status status="FAIL" start="2025-05-09T13:16:41.155916" elapsed="0.024280">FileNotFoundError: No such file: 'C:\Users\ACER NITRO 5\Downloads\Kt_Phatnguoi-main\captcha.png'</status>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>CAPTCHA: ${noidungcaptcha}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-05-09T13:16:41.180196" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>//input[@name="txt_captcha"]</arg>
+<arg>${noidungcaptcha}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-05-09T13:16:41.180196" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath://input[@class='btnTraCuu']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-05-09T13:16:41.180196" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-05-09T13:16:41.180196" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<var>${thongbaoloi}</var>
+<arg>Page Should Contain Element</arg>
+<arg>xpath=//div[@class='xe_texterror' and contains(text(), 'Mã xác nhận sai!')]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" start="2025-05-09T13:16:41.180196" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${thongbaoloi}' == 'True'</arg>
+<arg>Log</arg>
+<arg>CAPTCHA sai, thử lại lần ${solanlap}</arg>
+<arg>console=True</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-05-09T13:16:41.180196" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${thongbaoloi}' == 'True'</arg>
+<arg>Reload Page</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-05-09T13:16:41.180196" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${thongbaoloi}' == 'True'</arg>
+<arg>Sleep</arg>
+<arg>2s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-05-09T13:16:41.180196" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${solanlap}</var>
+<arg>${solanlap} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-05-09T13:16:41.180196" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-05-09T13:16:40.731267" elapsed="0.448929">FileNotFoundError: No such file: 'C:\Users\ACER NITRO 5\Downloads\Kt_Phatnguoi-main\captcha.png'</status>
+</iter>
+<status status="FAIL" start="2025-05-09T13:15:32.300751" elapsed="68.879445">FileNotFoundError: No such file: 'C:\Users\ACER NITRO 5\Downloads\Kt_Phatnguoi-main\captcha.png'</status>
+</while>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${thongbaoloi}' == 'False'</arg>
+<arg>Log</arg>
+<arg>Tra cứu thành công</arg>
+<arg>console=True</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-05-09T13:16:41.180196" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-05-09T13:16:41.180196" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<var>${noidung}</var>
+<arg>xpath=//*[@id="bodyPrint123"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-05-09T13:16:41.180196" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Nội dung tra cứu: ${noidung}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-05-09T13:16:41.185445" elapsed="0.000144"/>
+</kw>
+<kw name="Save Content To Word" owner="world">
+<arg>${noidung}</arg>
+<arg>ketquatracuu/ketquatracuu.docx</arg>
+<status status="NOT RUN" start="2025-05-09T13:16:41.185589" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2025-05-09T13:16:41.185589" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-05-09T13:15:25.973141" elapsed="75.212448">FileNotFoundError: No such file: 'C:\Users\ACER NITRO 5\Downloads\Kt_Phatnguoi-main\captcha.png'</status>
+</test>
+<status status="FAIL" start="2025-05-09T13:15:20.275619" elapsed="80.912019"/>
+</suite>
+<status status="FAIL" start="2025-05-09T13:15:20.260945" elapsed="80.926693"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Kt Phatnguoi-main" id="s1" pass="0" fail="1" skip="0">Kt Phatnguoi-main</stat>
+<stat name="Tracuu" id="s1-s1" pass="0" fail="1" skip="0">Kt Phatnguoi-main.Tracuu</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-05-09T13:15:23.771342" level="WARN">Neither CUDA nor MPS are available - defaulting to CPU. Note: This module is much faster with a GPU.</msg>
+</errors>
+</robot>
