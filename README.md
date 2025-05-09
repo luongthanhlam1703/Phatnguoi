@@ -21,7 +21,7 @@ pip install pillow
 
 - **schedule**: Đặt lịch chạy chương trình vào thời gian định trước
 
-- **easyocr** & **pillow**: Đọc và xử lý ảnh captcha
+- **easyocr** & **pillow**: Thư viện đọc và xử lý ảnh captcha
 
 - **python-docx**: Lưu kết quả tra cứu vào file Word
 
