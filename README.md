@@ -48,7 +48,14 @@ pip install pillow
 schedule.every().day.at("06:00").do(run_robot_test)
 schedule.every().day.at("12:00").do(run_robot_test)
 ```
+## File
+- main.py: file dùng để set thời gian, và chạy file tracuu.robot
 
+- tracuu.robot: dùng để xử lý các hành động nhập dữ liệu và các ô input và click button
+
+- captcha.py: dùng để xử lý captcha
+
+- world.py: dùng để xử lý in dữ liệu ra world
 ## Test nhanh (không theo lịch đã set sẵn)
 
 ```bash
